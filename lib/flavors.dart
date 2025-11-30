@@ -5,13 +5,13 @@ class F {
   static String get appName {
     switch (flavor) {
       case 'dev':
-        return 'my_ui_parts-Dev';
+        return 'MyUIParts-Dev';
       case 'staging':
-        return 'my_ui_parts-Staging';
+        return 'MyUIParts-Staging';
       case 'production':
-        return 'my_ui_parts';
+        return 'MyUIParts';
       default:
-        return 'my_ui_parts';
+        return 'MyUIParts';
     }
   }
 
