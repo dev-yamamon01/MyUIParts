@@ -1,5 +1,5 @@
 name: my_ui_parts
-description: "UI Parts Sample Project."
+description: うジットに関するサンプルアプリです
 # The following line prevents the package from being accidentally published to
 # pub.dev using `flutter pub publish`. This is preferred for private packages.
 publish_to: 'none' # Remove this line if you wish to publish to pub.dev
@@ -19,7 +19,7 @@ publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 version: 1.0.0+1
 
 environment:
-  sdk: ^3.9.2
+  sdk: ^3.9.0
 
 # Dependencies specify other packages that your package needs in order to work.
 # To automatically upgrade your package dependencies to the latest versions
@@ -30,6 +30,23 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  go_router: ^12.1.0
+  flutter_svg: ^2.0.9
+  flutter_riverpod: ^2.6.1
+  riverpod_annotation: ^2.6.1
+  freezed_annotation: ^2.4.4
+  json_annotation: ^4.8.1
+  qr_flutter: ^4.1.0
+  mobile_scanner: ^7.0.0
+  shared_preferences: ^2.5.3
+  flutter_native_splash: ^2.4.6
+  flutter_oss_licenses: ^3.0.4
+  url_launcher: 6.3.2
+  webview_flutter: 4.13.0
+  package_info_plus: ^8.3.1
+  connectivity_plus: ^6.1.5
+  flutter_screenutil: ^5.9.3
+  flutter_secure_storage: ^9.2.4
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
@@ -38,6 +55,13 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
+  build_runner: ^2.4.11
+  test: ^1.24.6
+  riverpod_generator: ^2.6.4
+  freezed: ^2.5.2
+  json_serializable: ^6.7.1
+  flutter_launcher_icons: ^0.14.4
+  flutter_flavorizr: ^2.4.1
 
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is
@@ -50,12 +74,44 @@ dev_dependencies:
 # following page: https://dart.dev/tools/pub/pubspec
 
 # The following section is specific to Flutter packages.
-flutter:
 
+#flutter_icons:
+#  android: true
+#  ios: true
+#  image_path_ios: "assets/icons/~_app_icon1024.png"
+#  image_path_android: "assets/icons/~_app_icon1024.png"
+#  adaptive_icon_background: "#FFFFFF"  # 背景色
+#  adaptive_icon_foreground: "assets/icons/~_app_icon1024.png"
+
+flutter_native_splash:
+  image: "assets/icons/splash_screen_icon.png"
+  color: '#FFFFFF'
+  android: true
+  ios: true
+
+flutter:
+  #  fonts:
+  #    - family: MPlusRounded1c
+  #      fonts:
+  #        - asset: assets/fonts/MPLUSRounded/MPLUSRounded1c-Regular.ttf
+  #        - asset: assets/fonts/MPLUSRounded/MPLUSRounded1c-Medium.ttf
+  #          weight: 500
+  #        - asset: assets/fonts/MPLUSRounded/MPLUSRounded1c-Bold.ttf
+  #          weight: 700
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
   # the material Icons class.
   uses-material-design: true
+  assets:
+    - assets/icons/
+    - assets/logo/
+    - assets/gif/
+    - assets/doc/
+  #  assets:
+  #    - assets/icons/
+  #    - assets/logo/
+  #    - assets/gif/
+  #    - assets/doc/
 
   # To add assets to your application, add an assets section, like this:
   # assets:

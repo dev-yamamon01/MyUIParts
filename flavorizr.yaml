@@ -1,0 +1,81 @@
+##「flutter pub run flutter_flavorizr」を実行すると、
+## main.dart,app.dart,flavors.dart,pages/MyHomePage.dartが自動で生成されるので、
+## 同じ名前のものは必ず事前にバックアップしておくこと
+
+## flavors.dartに関しては独自のメソッドを実装する
+
+##「flutter pub run flutter_flavorizr」実行後のやること
+## AndroidStudioの実行ボタンにflavorをリンクさせる >> Edit Configurationsで
+## 各flavorにてadditional run argに「--dart-define=FLAVOR=dev」を入れる
+
+app:
+  android:
+    flavorDimensions: "app"
+    applicationId: com.example.myuiparts
+  ios:
+    bundleId: com.example.myuiparts
+ide: "idea"
+
+instructions:
+  - assets:download
+  - assets:extract
+  - android:androidManifest
+  - android:flavorizrGradle
+  - android:buildGradle
+  - android:dummyAssets
+  - android:icons
+#  - flutter:flavors
+#  - flutter:app
+#  - flutter:pages
+#  - flutter:main
+  - ios:podfile
+  - ios:xcconfig
+  - ios:buildTargets
+  - ios:schema
+  - ios:dummyAssets
+  - ios:icons
+  - ios:plist
+#  - ios:launchScreen
+#  - google:firebase
+  - huawei:agconnect
+  - assets:clean
+#  - ide:config
+
+
+flavors:
+  dev:
+    app:
+      name: "MyUIParts-Dev"
+      icon: "assets/icons/app_icon_dev_1024.png"
+    ios:
+      bundleId: "com.example.myuiparts.dev"
+    android:
+      applicationId: "com.example.myuiparts.dev"
+      adaptiveIcon:
+        foreground: "assets/icons/app_icon_dev_1024.png" #この画像は外枠296pxの余白を作成しておく必要あり
+        background: "assets/icons/white_bg_1024.png"
+
+
+  staging:
+    app:
+      name: "MyUIParts-Staging"
+      icon: "assets/icons/app_icon_stg_1024.png"
+    ios:
+      bundleId: "com.example.myuiparts.staging"
+    android:
+      applicationId: "com.example.myuiparts.staging"
+      adaptiveIcon:
+        foreground: "assets/icons/app_icon_stg_1024.png"  #この画像は外枠296pxの余白を作成しておく必要あり
+        background: "assets/icons/white_bg_1024.png"
+
+  production:
+    app:
+      name: "MyUIParts"
+      icon: "assets/icons/app_icon1024.png"
+    ios:
+      bundleId: "com.example.myuiparts"
+    android:
+      applicationId: "com.example.myuiparts"
+      adaptiveIcon:
+        foreground: "assets/icons/app_icon1024.png"  #この画像は外枠296pxの余白を作成しておく必要あり
+        background: "assets/icons/white_bg_1024.png"
