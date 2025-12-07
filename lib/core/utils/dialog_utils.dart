@@ -1,46 +1,54 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:my_ui_parts/presentation/components/alert_info_dialog.dart';
+import 'package:my_ui_parts/core/utils/secure_storage_helper.dart';
+import 'package:my_ui_parts/core/utils/animation_utils.dart';
+
+enum DialogAnimationType {
+  zoom,
+  slide,
+  rotate,
+}
 
 class DialogUtils {
-  static final DialogUtils _instance = DialogUtils._internal();
+  static final DialogUtils _instance = DialogUtils._internal(); //クラス唯一のインスタンスを保持する
+  factory DialogUtils() => _instance; //既存の_instanceを返す
+  DialogUtils._internal(); //プライベートコンストラクタ(外部から直接呼び出し禁止)
 
-  factory DialogUtils() => _instance;
-
-  DialogUtils._internal();
-
-  static void showAnimationDialog({
+  static Future<void> showAnimationDialog({
     required BuildContext context,
     String title='お知らせ',
     String content = 'これはダイアログです',
     String buttonText = '閉じる',
     VoidCallback? onButtonPressed,
     bool isSuccess = false,
-    bool isError = false
-  }){
+    bool isError = false,
+  }) async {
+    // SecureStorageに保存したアニメーション設定値によって表示アニメーションを切り替える
+    final animationType = await SecureStorageHelper().getDialogAnimationType();
+
+    if (!context.mounted) return;
 
     showDialog(
       context: context,
       builder: (context) {
-        //TODO:ここをアニメーション設定値によって返すものを変える
-        //Zoom, Slide, Rotate
-        return ScaleTransition(
-          scale: CurvedAnimation(
-            parent: AnimationController(
-              duration: const Duration(milliseconds: 600),
-              vsync: Navigator.of(context),
-            )..forward(),
-            curve: Curves.easeOut,
-          ),
-            child: AlertInfoDialog(
-              title: title,
-              content: content,
-              buttonText: buttonText,
-              onButtonPressed: onButtonPressed,
-              isSuccess: isSuccess,
-              isError: isError,
-            )
+        final dialog = AlertInfoDialog(
+          title: title,
+          content: content,
+          buttonText: buttonText,
+          onButtonPressed: onButtonPressed,
+          isSuccess: isSuccess,
+          isError: isError,
         );
+
+        // animationTypeに応じてアニメーションを切り替える
+        switch (animationType) {
+          case DialogAnimationType.zoom:
+            return AnimationUtils.buildZoomAnimation(child: dialog);
+          case DialogAnimationType.slide:
+            return AnimationUtils.buildSlideAnimation(child: dialog);
+          case DialogAnimationType.rotate:
+            return AnimationUtils.buildRotateAnimation(child: dialog);
+        }
       },
     );
   }

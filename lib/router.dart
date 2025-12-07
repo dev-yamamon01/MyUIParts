@@ -1,4 +1,5 @@
 import 'package:go_router/go_router.dart';
+import 'package:my_ui_parts/presentation/views/more/animation_setting_page.dart';
 import 'presentation/views/home/home_screen.dart';
 import 'main.dart';
 import 'presentation/views/more/oss_license/oss_licenses_page.dart';
@@ -22,6 +23,7 @@ class AppRoutes {
   static const mailPasscodeInput ='/account/mail-address-edit/passcode';
   static const passwordChange ='/account/password-edit';
   static const accountDelete ='/account/account-delete';
+  static const animationSetting = '/animation-setting';
 }
 
 final GoRouter router = GoRouter(
@@ -52,6 +54,11 @@ final GoRouter router = GoRouter(
       path: AppRoutes.contact,
       name: 'contact',
       builder: (context, state) => const ContactPage(url: 'https://com.example/app-contact-us/'),
+    ),
+    GoRoute(
+      path: AppRoutes.animationSetting,
+      name: 'animationSetting',
+      builder: (context, state) => const AnimationSettingPage(),
     ),
   ],
 );

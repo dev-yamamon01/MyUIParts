@@ -26,7 +26,7 @@ class MorePage extends ConsumerWidget {
         icon: Icons.settings,
         color: AppColors.primary,
         onTap: () {
-          //context.pushNamed('animationSetting');
+          context.pushNamed('animationSetting');
         },
       ),
       ListViewItem(
