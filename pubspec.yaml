@@ -108,6 +108,8 @@ flutter:
     - assets/logo/
     - assets/gif/
     - assets/doc/
+    - assets/data/
+    - assets/images/
   #  assets:
   #    - assets/icons/
   #    - assets/logo/
