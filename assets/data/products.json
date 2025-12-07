@@ -1,0 +1,42 @@
+[
+  {
+    "id": "1",
+    "title": "スズキ スイフトスポーツ",
+    "subtitle": "ZC31S - 1.6L / 5MT",
+    "cost": 580000,
+    "detail": "",
+    "image": "assets/images/zc31s.png"
+  },
+  {
+    "id": "2",
+    "title": "ホンダ アコードユーロR",
+    "subtitle": "CL7 - 2.0L / 6MT",
+    "cost": 340000,
+    "detail": "",
+    "image": "assets/images/cl7.png"
+  },
+  {
+    "id": "3",
+    "title": "スバル インプレッサ WRX STI",
+    "subtitle": "GDB - 2.0L Turbo / 6MT",
+    "cost": 1800000,
+    "detail": "",
+    "image": "assets/images/gdb.png"
+  },
+  {
+    "id": "4",
+    "title": "(未)スバル WRX STI",
+    "subtitle": "VAB - 2.0L Turbo / 6MT",
+    "cost": 3000000,
+    "detail": "",
+    "image": "assets/images/vab.png"
+  },
+  {
+    "id": "5",
+    "title": "(未)トヨタ GR86",
+    "subtitle": "ZN8 - 2.4L / 6MT",
+    "cost": 3800000,
+    "detail": "",
+    "image": "assets/images/zn8.png"
+  }
+]
